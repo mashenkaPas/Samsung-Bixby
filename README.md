@@ -1,3 +1,6 @@
+# https://www.youtube.com/watch?v=Iq8JWcdot-E&t=5s video with examples 
+
+
 # recycleIt
  Samsung Bixby Hachathon Project
 
