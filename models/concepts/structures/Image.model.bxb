@@ -1,0 +1,10 @@
+structure (Image) {
+  role-of (viv.core.BaseImage)
+  property (imageData) {
+    type (ImageDataConcept)
+    min (Optional)
+  }
+  features{
+    transient
+  }
+}

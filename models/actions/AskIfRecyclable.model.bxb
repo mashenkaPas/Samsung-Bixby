@@ -1,0 +1,33 @@
+action (AskIfRecyclable) {
+  type(Constructor)
+  description (ask if this is a recyclable?)
+
+  collect {
+    input (material) {
+      type (Material)
+      min (Required) max (Many)
+      default-init {
+        intent {
+         goal: CreateMaterial
+        }
+      }
+    }
+    
+    input (sourcePoint) {
+      type (SourcePoint)
+      min (Required)
+      default-init {
+        intent {
+          goal: SourcePoint
+          route: viv.geo.CurrentLocation
+        }
+      }
+    }
+  }
+
+  output (Response) {
+    on-empty {
+      drop-contextual-inputs
+    }
+  }
+}

@@ -1,0 +1,10 @@
+train (t-34kg50jf924itfcochjeccntu) {
+  utterance ("[g:Response] how about (elephant)[v:DescriptionConcept] (poop)[v:DescriptionConcept]")
+  plan (rYxNCsIwEIVfbf1ZeARBUHDZO0jduBCkniCOTwiGJCRR8PamXXSVpTMMvI/3MVhh46mED35iGyhfMdSp7Rm9s5HYl9pjfJ2f/Yjqblh+cVGJQSuDXantAnM/OYeSc2KUoH3SznbOCn36u7cteTf3DsKr0zZhiQoz1GgwxyITJm5yqkYG1nmHqfMNHn4=)
+  last-modified (1555474086052)
+}
+train (t-3ancf2c0ncbdkq3pil8a83dmo) {
+  utterance ("[g:Response] is kitchen (oil bottle)[v:DescriptionConcept] recyclable?")
+  plan (bYxBCsIwEEV/a/UUgqDgsneQduNCkHqCOH4hGJKQiYK3NxZxlRk+/OE9BiusI43wxpf2ifIWR5v7iRqDV2JXowd9HO/TfJqrY/3FyWQmaxy2NTokFv539jVnpEqyMdvgh+CFMWNT8y7hmYTnYH3GEg1aLNCVhl9vymLOd9qSDvgA)
+  last-modified (1555474090760)
+}

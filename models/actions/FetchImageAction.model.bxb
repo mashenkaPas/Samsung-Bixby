@@ -1,0 +1,10 @@
+action (FetchImageAction) {
+  type (Search)
+  description (Fetch an image from camera)
+  
+  output (Image) {
+    on-empty {
+      drop-contextual-inputs
+    }
+  }
+}

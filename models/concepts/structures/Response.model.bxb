@@ -1,0 +1,31 @@
+structure (Response) {
+  description (result after all API calls and calculations)
+  property (item) {
+    type (Item)
+    min (Required) max (One)
+  }
+  property (info) {
+    type (Info)
+    min (Required) max (One)
+  }
+  property (image) {
+    type (Image)
+    min (Required) max (One)
+  }
+  property (cameraImage) {
+    type (CameraImage)
+    min (Required) max (One)
+  }
+  property (id) {
+    type (Id)
+    min (Required) max (One)
+  }
+  property (sourcePoint) {
+    type (SourcePoint)
+    min (Optional)
+  }
+  property (destinationPoint) {
+    type (DestinationPoint)
+    min (Optional) max (Many)
+  }
+}

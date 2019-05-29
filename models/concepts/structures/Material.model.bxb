@@ -1,0 +1,18 @@
+structure (Material) {
+  description (Result of API call for image recognition)
+  property (description) {
+    type (DescriptionConcept)
+    min (Required)
+  }
+  property (score) {
+    type (ScoreConcept)
+    min (Optional)
+  }
+  property (image) {
+    type (Image)
+    min (Optional)
+  }
+  features{
+    transient
+  }
+}

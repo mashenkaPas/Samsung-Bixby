@@ -1,0 +1,91 @@
+layout {
+  match: Response (result)
+  mode (Details)
+
+  
+  
+ content {
+    section {
+      content {
+        title-area {
+          halign (Center)
+          slot1 {
+            text {
+              value ("#{value(result.item)}")
+              style (Title_L)
+            }
+          }
+        }
+      }
+    }
+    section {
+      title ("Description")
+      content {
+        paragraph {
+          value ("#{value(result.info)}")
+          style (Detail_L)
+        }
+      }
+    }
+    if (size(result.destinationPoint) >= 1) {
+      section {
+        content {
+          map-card {
+            aspect-ratio (1:1)
+            title-area{
+              slot2 {
+                single-line {
+                  spacer
+                }
+              }
+            }
+            on-click {
+              intent {
+                goal: DestinationList
+                value: $expr(result)
+              }
+            }
+            markers {
+              marker {
+                geo ("result.sourcePoint.point")
+                icon {
+                  template (/icons/green-point.png)
+                }
+                width (22)
+                height (30)
+                anchor-x (5)
+                anchor-y (15)
+                rotation (0)
+              }
+              for-each (result.destinationPoint) {
+                as (destination) {
+                  marker {
+                    geo ("#{destination.point}")
+                    icon {
+                      template (/icons/red-point.png)
+                    }
+                    width (22)
+                    height (30)
+                    anchor-x (5)
+                    anchor-y (15)
+                    rotation (0)
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    else {
+      section {
+        content {
+          image ("#{value(result.image.url)}") {
+            // aspect-ratio (1:1)
+            // object-fit (Cover)
+          }
+        }
+      }
+    }
+  }
+}

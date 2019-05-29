@@ -1,0 +1,61 @@
+result-view {
+  match {
+    Response (result)
+  }
+
+  message {
+    if (size(result) > 1) {
+      template ("Here are some recycling suggestions")
+    } else-if (size(result) == 0) {
+      template ("No, you CANNOT recycle it!")
+    }
+  }
+
+  render {
+    if (size(result) > 1) {
+      layout {
+        layout-macro (picture-macro) {
+          param (result) {
+            expression (result.cameraImage)
+          }
+        }
+        for-each (result) {
+          as (item) {    
+            layout-macro (result-thumbnail-card) {
+              param (result) {
+                expression (item)
+              }
+            }
+          }
+        }
+      }
+    } 
+    else-if (size(result) == 1) {
+      layout-match (result) {
+        mode (Details)
+      }
+    }
+    else {
+      layout {
+        section {
+          content {
+            image ("images/no_recycle.png") {
+              aspect-ratio (1:1)
+            }
+          }
+        }
+      }
+    }
+  }
+  conversation-drivers{
+    conversation-driver{
+      template ("Gallery")
+    }
+    conversation-driver{
+      template ("Camera")
+    }
+    conversation-driver{
+      template ("I'm done")
+    }
+  }
+}

@@ -1,0 +1,12 @@
+action (FindDirections) {
+  description (Finds a direction from source point to destination point.)
+  type (Fetch)
+  collect {
+    input (response) {
+      type (Response)
+      min(Required) max(One)
+      prompt-behavior (AlwaysSelection)
+    }
+  }
+  output (SourcePoint)
+}

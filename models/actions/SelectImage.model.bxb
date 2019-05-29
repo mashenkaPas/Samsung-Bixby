@@ -1,0 +1,48 @@
+action (SelectImage) {
+  type (Search)
+  collect {
+    input (image) {
+      type (Image)
+      min (Required) max (One)
+  
+      default-init {
+        intent {
+          goal: Image
+          value: Image {
+            url: viv.core.Url("https://s1.cdn.autoevolution.com/images/news/volkswagen-unveils-new-6-liter-w12-tsi-next-gen-turbo-engine-with-608-hp-95273_1.jpg")
+          }
+          value: Image {
+            url: viv.core.Url("https://5.imimg.com/data5/EO/QG/MY-35109483/corrugated-paper-box-250x250.png")
+          }
+
+           value: Image {
+            url: viv.core.Url("https://www.lg.com/au/images/it-monitors/md05608207/gallery/20_24M38H-medium01.jpg")
+          }
+          value: Image {
+            url: viv.core.Url("https://media1.popsugar-assets.com/files/thumbor/D0OYajmdcatHUC1-b4Axbf-uNxo/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2017/02/08/859/n/1922195/a7a42800589b73af54eda9.99423697_edit_img_image_43136859_1486581354/i/KFC-Fried-Chicken-Pizza.jpg")
+          }
+          value: Image {
+            url: viv.core.Url("https://cdn.aws.toolstation.com/images/141020-UK/800/43934.jpg")
+          }
+          value: Image {
+            url: viv.core.Url("https://img.staticbg.com/images/oaupload/banggood/images/12/78/9ffb00a5-f913-45d4-b1ee-9e6c08675fba.jpg")
+          }
+
+          
+        }
+      }
+    }
+  }
+
+  features {
+    form-prompt
+  }
+  output (Image) {
+    evaluate {
+      $expr (image)
+    }
+    on-empty {
+      drop-contextual-inputs
+    }
+  }
+}

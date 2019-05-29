@@ -1,0 +1,43 @@
+layout-macro-def (result-thumbnail-card) {
+  params {
+    param (result) {
+      type (Response)
+      min (Required) max (One)
+    }
+  }
+  
+  content {
+    section {
+      content {
+        compound-card {
+          content  {
+            thumbnail-card {
+              title-area {
+                halign (Start)
+                slot1 {
+                  text {
+                    style (Title_XS)
+                    value ("#{value(result.item)}")
+                  }
+                }
+                slot2 {
+                  paragraph ("#{value(result.info)}") {
+                    style (Detail_M_Soft)
+                  }
+                }
+              }
+              image-url ("#{value(result.image.url)}")
+              image-position (End)
+            }
+          }
+          on-click {
+            intent{
+              goal: Response
+              value: $expr(result)
+            } 
+          }   
+        }
+      }
+    }
+  }
+}
